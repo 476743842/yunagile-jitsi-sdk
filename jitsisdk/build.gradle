@@ -1,10 +1,25 @@
 plugins {
     id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
-apply plugin: 'com.github.dcendents.android-maven'
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
 
-group = 'com.github.476743842'
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.yunagile.jitsi'
+                artifactId = 'video'
+                version = '1.2.0'
+            }
+        }
+    }
+}
 
 android {
     namespace 'com.yunagile.jitsisdk'
