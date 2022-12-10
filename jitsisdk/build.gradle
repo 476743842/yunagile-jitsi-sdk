@@ -2,9 +2,9 @@ plugins {
     id 'com.android.library'
 }
 
-//apply plugin: 'com.github.dcendents.android-maven'
-//
-//group = 'com.gitee.yunagile'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.476743842'
 
 android {
     namespace 'com.yunagile.jitsisdk'
